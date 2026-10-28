@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nova AVA · Ambiente Virtual de Aprendizagem</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- LOGIN (simulado) -->
+<section class="login" id="login" hidden>
+  <form class="card login-card" data-form="login">
+    <div class="brand"><div class="brand-mark">N</div><div><b>NOVA AVA</b><small>Instituto Nova</small></div></div>
+    <h1>Entrar</h1>
+    <p class="muted">Simulação: qualquer dado funciona.</p>
+    <div class="field"><label for="l-nome">Nome</label><input id="l-nome" name="nome" value="Marina Souza" required></div>
+    <div class="field"><label for="l-email">E-mail institucional</label><input id="l-email" name="email" type="email" value="marina@novaava.edu.br" required></div>
+    <div class="field"><label for="l-senha">Senha</label><input id="l-senha" type="password" value="123456" required></div>
+    <button class="btn btn-solid" type="submit">Acessar o AVA</button>
+  </form>
+</section>
+
+<!-- APLICAÇÃO -->
+<div class="app" id="shell" hidden>
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-mark">N</div><div><b>NOVA AVA</b><small>Instituto Nova</small></div></div>
+    <nav class="nav" id="nav" aria-label="Navegação principal"></nav>
+    <div class="side-foot"><button class="btn btn-soft" data-acao="sair" type="button">Sair</button></div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div><h1 id="titulo"></h1><p id="subtitulo"></p></div>
+      <div class="actions">
+        <label class="search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          <input id="busca" type="search" placeholder="Buscar disciplina ou atividade" aria-label="Buscar">
+        </label>
+        <button class="icon-btn" data-acao="tema" type="button" aria-label="Alternar tema">
+          <svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <a class="avatar" id="avatar" href="#/conta" aria-label="Minha conta" style="text-decoration:none"></a>
+      </div>
+    </header>
+    <div id="app" class="view"></div>
+  </main>
+</div>
+
+<dialog id="modal"></dialog>
+<div id="toast" role="status"></div>
+
+<script src="js/data.js"></script>
+<script src="js/store.js"></script>
+<script src="js/views.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
